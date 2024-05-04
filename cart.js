@@ -34,3 +34,22 @@ light.addEventListener("click", () => {
     body.classList.toggle("body")
     empty.classList.toggle("lor2")
 })
+let bright = document.querySelector(".sunma")
+let mobilenav = document.querySelector(".mobile-nav")
+let icon = document.querySelector(".mobile-menu-icon")
+
+
+bright.addEventListener("click", () => {
+  bright.classList.toggle("fa-moon");
+  sign.classList.toggle("signs")
+  home.classList.toggle("signs")
+  head.classList.toggle("header")
+  logo.classList.toggle("logo2")
+  cart.classList.toggle("car2")
+  zer02.classList.toggle("ero2")
+  body.classList.toggle("body")
+  empty.classList.toggle("lor2")
+  icon.classList.toggle("icon")
+  mobilenav.classList.toggle("header")
+  zer02.classList.toggle("ero2")
+})
