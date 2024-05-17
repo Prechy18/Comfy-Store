@@ -53,39 +53,43 @@
 
 
     <section class="pro-whole container">
-         <div class="inputsec">
+        <form class="inputsec container">
             <div class="pro-first">
-                <div class="search">
-                    <p>Search Product</p>
-                    <input type="search">
+                <div class="search-box">
+                    <label for="search">Search</label>
+                    <br>
+                    <input class="search-product" type="search">
                 </div>
 
-                <div class="select"> 
-                 <p>Select Category</p>
-                    <select name="country" id="Category">
-                       <option value="1">all</option>
-                       <option value="2">Table</option>
-                       <option value="3">Chair</option>
-                       <option value="4">Kids</option>
-                        <option value="5">Sofas</option>
-                        <option value="6">Beds</option>
+                <div class="select-box"> 
+                <label for="Category">Select Category</label>
+                <br>
+                    <select name="Category" id="Category" class="Category">
+                       <option value="all">all</option>
+                       <option value="Table">Table</option>
+                       <option value="Chair">Chair</option>
+                       <option value="Kids">Kids</option>
+                        <option value="Sofas">Sofas</option>
+                        <option value="Beds">Beds</option>
                     </select>
                 </div>
 
                 <div class="company"> 
-                    <p>Select Company</p>
-                       <select name="company" id="company">
-                          <option value="1">all</option>
-                          <option value="2">Modenza</option>
-                          <option value="3">Luxora</option>
-                          <option value="4">Artifex</option>
-                           <option value="5">Comfora</option>
-                           <option value="6">Homestead</option>
+                    <label for="company">Select Company</label>
+                    <br>
+                       <select name="company" id="company" class="company">
+                          <option value="all">all</option>
+                          <option value="Modenza">Modenza</option>
+                          <option value="Luxora">Luxora</option>
+                          <option value="Artifex">Artifex</option>
+                           <option value="Comfora">Comfora</option>
+                           <option value="Homestead">Homestead</option>
                        </select>
                    </div>
 
                    <div class="sort"> 
-                    <p>Sort By</p>
+                    <label for="sort">Sort By</label>
+                    <br>
                        <select name="sort" id="sort">
                           <option value="1">a-z</option>
                           <option value="2">z-a</option>
@@ -93,10 +97,12 @@
                           <option value="4">low</option>
                        </select>
                    </div>
-            </div>
+                </div>
+
+
             <div class="pro-sec">
                 <div class="Price">
-                    <p>Select Price <span  class="one">$1,000.00</span></p>
+                    <p>Select Price <span class="one">$1,000.00</span></p>
                     <input type="range" min="0" max="1000" value="1000">
                     <p>0 <span class="max">Max :$1,000.00</span></p>
                 </div>
@@ -109,10 +115,10 @@
                     <button class="yel-but">Search</button>
                 </div>
                 <div class="reset">
-                    <input type="reset">
+                    <button class="yel-reset">Reset</button>
                 </div>
              </div>
-         </div>
+            </form>
 
          <div class="menu">
             <p>22 product</p>
@@ -124,7 +130,7 @@
                 <i class="fa-solid fa-list"></i>
                 </div>
             </div>
-         </div>
+           </div>
 
 
          <section class="product-container">
@@ -140,8 +146,8 @@
                   </div>
                 </a> -->
                 <!-- </div> -->
-
             </div>
+
 
             <div class="list-items">
                 <!-- <a class="list-item" href="">

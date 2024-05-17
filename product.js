@@ -2,6 +2,9 @@ let openMenuIcon = document.querySelector(".fa-bars");
 let closeMenuIcon = document.querySelector(".fa-x");
 const mobileNav = document.querySelector(".mobile-nav");
 const header = document.querySelector("header");
+let searchProductInput = document.querySelector(".search-product");
+let category = document.querySelector(".Category")
+let company = document.querySelector(".company")
 
 // when i click on  the menu icon
 // open the mobile nav
@@ -24,6 +27,7 @@ const cards = [
     price: "$179.99",
     link: "htttp",
     company: "Modenza",
+    categories: "Table , all",
   },
 
   {
@@ -33,6 +37,7 @@ const cards = [
     price: "$333.9",
     link: "htttp",
     company: "Luxora",
+    categories: "Kids , Chair , all",
   },
 
   {
@@ -42,6 +47,7 @@ const cards = [
     price: "$179.99",
     link: "htttp",
     company: "Modenza",
+    categories: "Table , all",
   },
 
   {
@@ -51,6 +57,7 @@ const cards = [
     price: "$129.99",
     link: "htttp",
     company: "Homestead",
+    categories: "Beds , all",
   },
 
   {
@@ -60,6 +67,7 @@ const cards = [
     price: "$159.99",
     link: "htttp",
     company: "Comfora",
+    categories: "Sofas , all",
   },
 
   {
@@ -69,6 +77,7 @@ const cards = [
     price: "$84.99",
     link: "htttp",
     company: "Homestead",
+    categories: "Beds , all",
   },
 
   {
@@ -78,6 +87,7 @@ const cards = [
     price: "$94.99",
     link: "htttp",
     company: "Luxora",
+    categories: "Kids , all",
   },
 
   {
@@ -87,6 +97,7 @@ const cards = [
     price: "$159.99",
     link: "htttp",
     company: "Modenza",
+    categories: "Table , all",
   },
 
   {
@@ -96,6 +107,7 @@ const cards = [
     price: "$189.99",
     link: "htttp",
     company: "Homestead",
+    categories: "Beds , all",
   },
 
   {
@@ -105,137 +117,134 @@ const cards = [
     price: "$259.99",
     link: "htttp",
     company: "Luxora",
+    categories: "Chair , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/mini.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Minimalist Shelves",
+    price: "$439.99",
     link: "htttp",
-    company: "",
+    company: "Artifex",
+    categories: "Beds , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/morden.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Morden Sofa",
+    price: "$299.99",
     link: "htttp",
-    company: "",
+    company: "Comfora",
+    categories: "Sofas , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/morden2.webp",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Modern Table",
+    price: "$389.99",
     link: "htttp",
-    company: "",
+    company: "Modenza",
+    categories: "Table , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/recli.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Reclining Sofa",
+    price: "$329.99",
     link: "htttp",
-    company: "",
+    company: "Comfora",
+    categories: "Sofas , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/sect.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Sectional Sofa",
+    price: "$359.99",
     link: "htttp",
-    company: "",
+    company: "Comfora",
+    categories: "Sofas , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/sleek.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Sleek Bed",
+    price: "$539.99",
     link: "htttp",
-    company: "",
+    company: "Homestead",
+    categories: "Beds , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/sleek2.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Sleek Chair",
+    price: "$199.99",
     link: "htttp",
-    company: "",
+    company: "Luxora",
+    categories: "Chair , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/stream.webp",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Streamlined Table",
+    price: "$209.99",
     link: "htttp",
-    company: "",
+    company: "Modenza",
+    categories: "Table , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/stylish.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Stylish Bed",
+    price: "$169.99",
     link: "htttp",
-    company: "",
+    company: "Homestead",
+    categories: "Beds, all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/toy.webp",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Toy shelf",
+    price: "$79.99",
     link: "htttp",
-    company: "",
+    company: "Luxora",
+    categories: "Kids , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/velvet.jpeg",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Velvet Sofa",
+    price: "$289.99",
     link: "htttp",
-    company: "",
+    company: "Luxora",
+    categories: "Sofas , all",
   },
 
   {
     id:"prod-" + Math.random() * 1000,
     img: "images/wooden.webp",
-    label: "Lounge Chair",
-    price: "$259.99",
+    label: "Wooden Shelves",
+    price: "$119.99",
     link: "htttp",
-    company: "",
+    company: "Artifex",
+    categories: "Kids , all",
   },
 ];
 
-// for (let i = 0; i < 10; i++){
-//   productContainer.innerHTML +=`
-//   <div class="loop">
-// <a class="prod-link" href=${cards[i].link}>
-//   <div class="loop-img">
-//       <img class="img-contain" src=${cards[i].img} alt="">
-//     <div class="loop-text">
-//       <p class="av">${cards[i].label}</p>
-//       <p class="av-p">${cards[i].price}</p>
-//     </div>
-//   </div>
-// </a>
-// </div>
-//   `;
-
-
 let gridBtn = document.querySelector(".fa-table-cells")
 let listBtn = document.querySelector(".fa-list")
-let loop2 = document.querySelector(".loop")
-let img = document.querySelector(".loop-img")
+// let loop2 = document.querySelector(".loop")
+// let img = document.querySelector(".loop-img")
 
 let isGrid = true;
 
@@ -244,27 +253,22 @@ gridBtn.addEventListener("click", () => {
   listContainer.classList.add("hide-container");
   gridContainer.classList.remove("hide-container");
 
-  sliceProduct(0, 10);
-
-
- 
- 
+  sliceProduct(cards, 0, 10); 
 })
 
 listBtn.addEventListener("click", () => {
   isGrid = false;
   gridContainer.classList.add("hide-container")
   listContainer.classList.remove("hide-container")
-
-  sliceProduct(0, 10);
-
+77
+  sliceProduct(cards,0, 10);
 })
 
 
 
-function sliceProduct(index, number) {
+function sliceProduct(data, index, number) {
 
-  let sliced = cards.slice(index * 10, index * number + number);
+  let sliced = data.slice(index * 10, index * number + number);
 
   if(isGrid){
     gridContainer.innerHTML = sliced.map((card) => ` <div class="loop">
@@ -293,14 +297,14 @@ function sliceProduct(index, number) {
      </div>
      <div class="pricess">
          ${card.price}
-     </div>
+                                           </div>
  </a>
      
      `).join("")
   }
 }
 
-sliceProduct(0, 10);
+sliceProduct(cards, 0, 10);
 
 let pagination = document.querySelector(".page-wrapper");
 function paginate() {
@@ -308,11 +312,59 @@ function paginate() {
 
   for (let i= 0; i <
     Math.ceil(cards.length / 10); i++) {
-         pagination.innerHTML += `<button onclick="sliceProduct(${i}, ${10})" style = "padding: 10px; background-color:#181920; border:none; 
+         pagination.innerHTML += `<button onclick="sliceProduct(cards, ${i}, ${10})" style = "padding: 10px; background-color:#181920; border:none; 
          color: white; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
          font-size: 16px;
          font-weight: 600; cursor: pointer;" class="page-no">${i + 1}
-         </button>`
+         </bucards,tton>`
     }
 }
 paginate();
+
+searchProductInput.addEventListener("keyup", (e) => {
+  let filteredProducts = [];
+  let searchTerm = e.target.value.toLowerCase();
+  console.log(searchTerm);
+  if(searchTerm  == "") {
+    sliceProduct(cards, 0, 10);
+    return;
+  }
+  filteredProducts = cards.filter(card => { 
+
+    return card.label.toLowerCase().includes(searchTerm);
+
+  });
+  console.log(filteredProducts);
+  sliceProduct(filteredProducts, 0,  10);
+
+})
+
+category.addEventListener("change" , (e) => {
+  filteredProducts = [];
+  let selectTerm = e.target.value.toLowerCase();
+  console.log(selectTerm);
+  if(selectTerm == "") {
+    sliceProduct(cards, 0, 10);
+    return;
+  }
+  filteredProducts = cards.filter(card => {
+    return card.categories.toLowerCase().includes(selectTerm)
+  });
+  console.log(filteredProducts);
+  sliceProduct(filteredProducts, 0, 10)
+})
+
+company.addEventListener("change", (e) => {
+  filteredProducts = []
+  let companyTerm = e.target.value.toLowerCase();
+  if (companyTerm == "") {
+    sliceProduct(cards, 0, 10);
+    return;
+  }
+  filteredProducts = cards.filter(card => {
+    return card.company.toLowerCase().includes(companyTerm)
+  });
+  sliceProduct(filteredProducts, 0, 10)
+})
+
+
