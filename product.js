@@ -260,7 +260,7 @@ listBtn.addEventListener("click", () => {
   isGrid = false;
   gridContainer.classList.add("hide-container")
   listContainer.classList.remove("hide-container")
-77
+
   sliceProduct(cards,0, 10);
 })
 
@@ -297,7 +297,7 @@ function sliceProduct(data, index, number) {
      </div>
      <div class="pricess">
          ${card.price}
-                                           </div>
+      </div>
  </a>
      
      `).join("")
