@@ -16,9 +16,8 @@ openMenuIcon.addEventListener("click", () => {
 });
 
 
-let gridContainer = document.querySelector(".grid");
-let listContainer = document.querySelector(".list-items");
-
+let searchParams = new URLSearchParams(window.location.search)
+const productId = searchParams.get("id");
 const cards = [
   {
     id:"prod-1",
@@ -241,143 +240,43 @@ const cards = [
   },
 ];
 
-let gridBtn = document.querySelector(".fa-table-cells")
-let listBtn = document.querySelector(".fa-list")
-let listCon = document.querySelector(".list")
-let gridCon = document.querySelector(".table")
+let ShoppingCart = document.querySelector(".pro-cart")
+const displaySingleProduct = () => {
+  let singleProduct = cards.find(card => card.id === productId);
+  let { img, label, company, price, id } = singleProduct
+  console.log(singleProduct);
 
-let isGrid = true;
+    ShoppingCart.innerHTML += `
+    <div class="whole-pro containers">
+  <div class="cart-img">
+      <a href="index.html">Home</a> <i class="fa-solid fa-arrow-right"></i> <a href="product.html">Products</a>
+      <br>
+      <img class="cart-pro" src="${img}" alt="">
+  </div>
 
-gridBtn.addEventListener("click", () => {
-  isGrid = true;
-  listContainer.classList.add("hide-container");
-  gridContainer.classList.remove("hide-container");
-  gridCon.classList.add("active");
-  gridBtn.classList.add("act");
-  listCon.classList.remove("active");
-  listBtn.classList.remove("act");
-  listBtn.classList.remove("act-list");
-  sliceProduct(cards, 0, 10); 
-})
-
-listBtn.addEventListener("click", () => {
-  isGrid = false;
-  gridContainer.classList.add("hide-container");
-  listContainer.classList.remove("hide-container");
-  gridCon.classList.remove("active");
-  gridBtn.classList.remove("act")
-  listCon.classList.add("active");
-  listBtn.classList.add("act")
-  listBtn.classList.add("act-list")
-  sliceProduct(cards,0, 10);
-})
-
-
-function sliceProduct(data, index, number) {
-
-  let sliced = data.slice(index * 10, index * number + number);
-
-  if(isGrid){
-    gridContainer.innerHTML = sliced.map((card) => ` <div class="loop">
-    <a class="prod-link" href=./${card.link}?id=${card.id}>
-      <div class="loop-img">
-          <img class="img-contain" src=${card.img} alt="">
-        <div class="loop-text">
-          <p class="av">${card.label}</p>
-          <p class="av-p">${card.price}</p>
-        </div>
+  <div class="cart-info">
+      <p class="cart-name">${label}</p>
+      <p class="cart-company">${company}</p>
+      <p class="cart-price">${price}</p>
+      <p class="cart-dec">Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge</p>
+      <div class="colors">
+          <p class="colo">Colors</p>
+          <button class="green"></button>
+          <button class="blue"></button>
       </div>
-    </a>
-    </div>`).join("");
-  } 
-  else {
-    listContainer.innerHTML = sliced.map((card) => `
-     <a class="list-item" href="${card.link}">
-     <div class="image-desc">
-         <div class="image-holder">
-             <img src="${card.img}" height="130" width="180" alt="">
-         </div>
-         <div>
-             <h2 class="label-text">${card.label}</h2>
-             <p class="company-name">${card.company}</p>
-         </div>
-     </div>
-     <div class="pricess">
-         ${card.price}
-      </div>
- </a>
-     `).join("")
-  }
+          <p class="amount">Amount</p>
+          <select  name="Amount" id="amount">
+             ${Array.from({length: 15}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
+          </select>
+          <br>
+          <button onclick="addToCart('${id}')" class="cart-btn">ADD TO CART</button>
+  </div>
+  </div> 
+  `
+
 }
-sliceProduct(cards, 0, 10);
+displaySingleProduct();
 
-let pagination = document.querySelector(".page-wrapper");
-function paginate() {
-  let range = Math.floor(cards / 10);
-
-  for (let i= 0; i <
-    Math.ceil(cards.length / 10); i++) {
-         pagination.innerHTML += `<button onclick="sliceProduct(cards, ${i}, ${10})" style = "padding: 10px; background-color:#181920; border:none; 
-         color: white; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-         font-size: 16px;
-         font-weight: 600; cursor: pointer;" class="page-no">${i + 1}
-         </button>`
-    }
-}
-paginate();
-
-// search and filter products
-let searchbtn = document.querySelector(".yel-but")
-searchProductInput.addEventListener("keyup", (e) => {
-  let filteredProducts = [];
-  let searchTerm = e.target.value.toLowerCase();
-  console.log(searchTerm);
-  if(searchTerm  == "") {
-    sliceProduct(cards, 0, 10);
-    return;
-  }
-  filteredProducts = cards.filter(card => { 
-
-    return card.label.toLowerCase().includes(searchTerm);
-
-  });
-  console.log(filteredProducts);
-  sliceProduct(filteredProducts, 0,  10);
-
-})
-
-// the category 
-category.addEventListener("change" , (e) => {
-  filteredProducts = [];
-  let selectTerm = e.target.value.toLowerCase();
-  console.log(selectTerm);
-  if(selectTerm == "") {
-    sliceProduct(cards, 0, 10);
-    return;
-  }
-  filteredProducts = cards.filter(card => {
-    return card.categories.toLowerCase().includes(selectTerm)
-  });
-  console.log(filteredProducts);
-  sliceProduct(filteredProducts, 0, 10)
-})
-
-// the company
-company.addEventListener("change", (e) => {
-  filteredProducts = []
-  let companyTerm = e.target.value.toLowerCase();
-  if (companyTerm == "") {
-    sliceProduct(cards, 0, 10);
-    return;
-  }
-  filteredProducts = cards.filter(card => {
-    return card.company.toLowerCase().includes(companyTerm)
-  });
-  sliceProduct(filteredProducts, 0, 10)
-})
-
-
-// Cart number
 let cartNumber = document.querySelector(".zero")
 let cartMobileNumber = document.querySelector(".zero-mobile")
 let toastBox = document.getElementById('toastBox');
@@ -397,18 +296,20 @@ const addToCart = (id) => {
       qty: itemQuantity,
     });
   }
+
   localStorage.setItem('cart', JSON.stringify(cart));
-  showCustomAlert('Item has been added to your cart.');
+  showCustomAlert('Item has been added to cart.');
   console.log(cart);
   calculateLength();
 };
 
 const calculateLength = () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let total = cart.reduce((acc, item) => acc + item.qty, 0);
+  let total = cart.reduce((acc , item) => acc
+   + item.qty , 0);
   console.log(total);
   cartNumber.innerHTML = total;
-  cartMobileNumber.innerHTML = total
+  cartMobileNumber.innerHTML = total;
 };
 
 calculateLength();
@@ -418,34 +319,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-let searchProductbtn = document.querySelector(".yel-but")
-
-searchProductbtn.addEventListener('submit', () =>{
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Function to show custom alert
+const showCustomAlert = (message) => {
+  const alertBox = document.getElementById('custom-alert');
+  const alertMessage = document.getElementById('alert-message');
+  
+  alertMessage.textContent = message;
+  alertBox.classList.add('show');
+  alertBox.classList.remove('hide');
+  
+  // Hide the alert after 3 seconds
+  setTimeout(() => {
+    alertBox.classList.remove('show');
+    alertBox.classList.add('hide');
+  }, 3000);
+};
 
 
 

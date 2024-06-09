@@ -12,7 +12,7 @@
 <body>
     <div class="sign">
         <div class="acc">
-         <a class="guest" href="sign.html">Sign in / Guest</a>
+         <a class="guest" href="signin.html">Sign in / Guest</a>
          <a class="create" href="register.html">Create Account</a>
         </div>
     </div>
@@ -30,7 +30,7 @@
         </ul>
         <div class="img">
             <i class="fa-solid fa-sun sun"></i>
-          <img class="car" src="images/cart.svg" alt=""><span class="zero">0</span>
+          <a href="cart.html"><img class="car" src="images/cart.svg" alt=""></a><span class="zero">3</span>
         </div>
         </nav>
 
@@ -42,12 +42,12 @@
         <nav class="mobile-nav slide container" style="margin-top: 100px;">
             <a class="ac" href="index.html">Home</a>
             <a class="ac" href="about.html">About</a>
-            <a class="active"  href="product.html">Product</a>
+            <a class="active-link"  href="product.html">Product</a>
             <a class="ac"  href="cart.html">Cart</a>
         </nav>
         <div class="imga">
             <i class="fa-solid fa-sun sun sunma"></i>
-            <img class="car" src="images/cart.svg" alt=""><span class="zero">0</span>
+            <a href="cart.html"><img class="car cart-mobile" src="images/cart.svg" alt=""></a><span class="zero zero-mobile">0</span>
           </div>
     </header>
 
@@ -103,7 +103,7 @@
             <div class="pro-sec">
                 <div class="Price">
                     <p>Select Price <span class="one">$1,000.00</span></p>
-                    <input type="range" min="0" max="1000" value="1000">
+                    <input type="range" min="0" max="1000" value="1000" id="range-preview">
                     <p>0 <span class="max">Max :$1,000.00</span></p>
                 </div>
     
@@ -123,8 +123,8 @@
          <div class="menu">
             <p>22 product</p>
             <div>
-                <div class="table">
-                <i class="fa-solid fa-table-cells"></i>
+                <div class="table active">
+                <i class="fa-solid fa-table-cells act"></i>
                 </div>
                 <div class="list">
                 <i class="fa-solid fa-list"></i>
@@ -135,8 +135,8 @@
 
          <section class="product-container">
             <div class="grid">
-                <!-- <div class="loop"> -->
-                <!-- <a class="prod-link" href="">
+                <!-- <div class="loop">
+                <a class="prod-link" onclick="links()" href="">
                   <div class="loop-img">
                       <img class="img-contain" src="images/light.jpeg" alt="">
                     <div class="loop-text">
@@ -144,8 +144,8 @@
                       <p class="av-p">$179.99</p>
                     </div>
                   </div>
-                </a> -->
-                <!-- </div> -->
+                </a>
+                </div> -->
             </div>
 
 
@@ -174,7 +174,6 @@
            <div class="page-wrapper"></div>
            <a>NEXT</a>
         </div>
-
     <script src="product.js"></script>
 </body>
 </html>

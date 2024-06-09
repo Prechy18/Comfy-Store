@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/a9ae2d9c34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
@@ -13,7 +15,7 @@
 
     <div class="sign">
         <div class="acc">
-         <a class="guest" href="sign.html">Sign in / Guest</a>
+         <a class="guest" href="signin.html">Sign in / Guest</a>
          <a class="create" href="register.html">Create Account</a>
         </div>
     </div>
@@ -31,7 +33,7 @@
         </ul>
         <div class="img">
             <i class="fa-solid fa-sun sun"></i>
-          <img class="car" src="images/cart.svg" alt=""><span class="zero">0</span>
+            <a href="cart.html"><img class="car" src="images/cart.svg" alt=""></a><span class="zero">0</span>
         </div>
         </nav>
 
@@ -43,22 +45,26 @@
         <nav class="mobile-nav slide container" style="margin-top: 100px;">
             <a class="ac" href="index.html">Home</a>
             <a class="ac" href="about.html">About</a>
-            <a class="active"  href="product.html">Product</a>
+            <a class="active-link"  href="product.html">Product</a>
             <a class="ac"  href="cart.html">Cart</a>
         </nav>
         <div class="imga">
             <i class="fa-solid fa-sun sun sunma"></i>
-            <img class="car" src="images/cart.svg" alt=""><span class="zero">0</span>
+            <a href="cart.html"><img class="car cart-mobile" src="images/cart.svg" alt=""></a><span class="zero zero-mobile">0</span>
           </div>
     </header>
 
     <section class="pro-cart">
-        <div class="whole-pro containers">
-            <div class="cart-img">
+        <div id="custom-alert" class="custom-alert">
+            <i class="fas fa-check-circle icon" style="color: #037803;"></i>
+            <span id="alert-message"></span>
+        </div>        
+        <!-- <div class="whole-pro containers"> -->
+            <!-- <div class="cart-img">
                 <a href="index.html">Home</a> <i class="fa-solid fa-arrow-right"></i> <a href="product.html">Products</a>
                 <br>
                 <img class="cart-pro" src="images/light.jpeg" alt="">
-            </div>
+            </div> 
 
             <div class="cart-info">
                 <p class="cart-name">Avant-Garde Lamp</p>
@@ -70,7 +76,7 @@
                     <button class="green"></button>
                     <button class="blue"></button>
                 </div>
-                    <p class="amound">Amount</p>
+                    <p class="amount">Amount</p>
                     <select name="Amount" id="amount">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -82,11 +88,19 @@
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
+                        <option value="10">11</option>
+                        <option value="10">12</option>
+                        <option value="10">13</option>
+                        <option value="10">14</option>
+                        <option value="10">15</option>
+
                     </select>
+                    <br>
                     <button class="cart-btn">ADD TO CART</button>
-            </div>
+            </div> -->
         </div>
     </section>
+    <script src="prod-details.js"></script>
 </body>
 </html>
 
