@@ -16,33 +16,6 @@ openMenuIcon.addEventListener("click", () => {
 let cartNumber = document.querySelector(".zero") // Cart Number
 let cartMobileNumber = document.querySelector(".zero-mobile") // Mobile cart number
 
-
-// When the add to cart button is clicked it pick out the product id with the value of the amouunt
-// and also call out the cart from the localStorage, if the item already exist in the cart it should add the number of amount picked
-// buh if the item doesn't exist it should add the item to the cart but the cart number wouldn't count or show based on the number of item
-// but based on the number of item quantity 
-const addToCart = (id) => {
-  let selectedItem = cards.find(card => card.id == id);
-  let itemQuatity = parseInt(document.getElementById("amount").value)
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  console.log(itemQuatity);
-
-  const existingItem = cart.find(card => card.id == id)
-  if(existingItem){
-    existingItem.itemQuatity += itemQuatity
-  } else {
-    cart.push({
-    ...selectedItem,
-    qty: itemQuatity,
-  }) 
-  }
-
-  localStorage.setItem('cart', JSON.stringify(cart)) // u have to change the item to a string for you to be able to store it in the localstorage
-
-  console.log(cart);
-  calculateLength();
-}
-
 const calculateLength = () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   let total = cart.reduce((acc, item) => acc + item.qty , 0)
@@ -111,5 +84,30 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add(savedTheme + '-mode');
   } else {
     body.classList.add('dark-mode'); // Default theme
+  }
+});
+
+
+let signlink = document.querySelector(".acc")
+  let guest = document.querySelector(".guest")
+  let create = document.querySelector(".create")
+window.addEventListener("DOMContentLoaded", (event) => {
+  // Check if we need to add new links
+  if (localStorage.getItem("addLinksForHome") === "true") {
+      // Add new links
+      const navList = document.getElementById("navList");
+      const newLink1 = document.createElement("li");
+      newLink1.innerHTML = '<li class="own"><a href="checkout.html">Checkout</a></li>';
+      navList.appendChild(newLink1);
+
+      const newLink2 = document.createElement("li");
+      newLink2.innerHTML = '<li class="own"><a href="orders.html">Order</a></li>';
+      navList.appendChild(newLink2);
+      // Clear the localStorage item
+
+      localStorage.removeItem("addLinksForHome");
+     signlink.classList.toggle('acc-inn')
+     guest.innerHTML = '<p class="hello">Hello, demo user</p>'
+     create.innerHTML = '<button class="guest-logout">Log out</button>'
   }
 });

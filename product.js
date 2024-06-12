@@ -2,9 +2,6 @@ let openMenuIcon = document.querySelector(".fa-bars");
 let closeMenuIcon = document.querySelector(".fa-x");
 const mobileNav = document.querySelector(".mobile-nav");
 const header = document.querySelector("header");
-let searchProductInput = document.querySelector(".search-product");
-let category = document.querySelector(".Category")
-let company = document.querySelector(".company")
 
 // when i click on  the menu icon
 // open the mobile nav
@@ -284,7 +281,7 @@ function sliceProduct(data, index, number) {
           <img class="img-contain" src=${card.img} alt="">
         <div class="loop-text">
           <p class="av">${card.label}</p>
-          <p class="av-p">${card.price}</p>
+          <p class="av-p">$${card.price}</p>
         </div>
       </div>
     </a>
@@ -326,55 +323,67 @@ function paginate() {
 }
 paginate();
 
+
+
 // search and filter products
 let searchbtn = document.querySelector(".yel-but")
-searchProductInput.addEventListener("keyup", (e) => {
+let searchProductInput = document.querySelector(".search-product");
+let category = document.querySelector(".Category")
+let company = document.querySelector(".company")
+
+// Function to handle the search logic
+function searchProducts() {
   let filteredProducts = [];
-  let searchTerm = e.target.value.toLowerCase();
+  let searchTerm = searchProductInput.value.toLowerCase();
   console.log(searchTerm);
-  if(searchTerm  == "") {
-    sliceProduct(cards, 0, 10);
-    return;
-  }
-  filteredProducts = cards.filter(card => { 
-
-    return card.label.toLowerCase().includes(searchTerm);
-
-  });
-  console.log(filteredProducts);
-  sliceProduct(filteredProducts, 0,  10);
-
-})
-
-// the category 
-category.addEventListener("change" , (e) => {
-  filteredProducts = [];
-  let selectTerm = e.target.value.toLowerCase();
-  console.log(selectTerm);
-  if(selectTerm == "") {
+  if (searchTerm == "") {
     sliceProduct(cards, 0, 10);
     return;
   }
   filteredProducts = cards.filter(card => {
-    return card.categories.toLowerCase().includes(selectTerm)
+    return card.label.toLowerCase().includes(searchTerm);
   });
   console.log(filteredProducts);
-  sliceProduct(filteredProducts, 0, 10)
-})
+  sliceProduct(filteredProducts, 0, 10);
+}
 
-// the company
-company.addEventListener("change", (e) => {
-  filteredProducts = []
+// Click event listener for the search button
+searchbtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  searchProducts();
+  categories();
+  companies();
+});
+
+// Category filter
+function categories () {
+  filteredProducts = [];
+  let selectTerm = e.target.value.toLowerCase();
+  console.log(selectTerm);
+  if (selectTerm == "") {
+    sliceProduct(cards, 0, 10);
+    return;
+  }
+  filteredProducts = cards.filter(card => {
+    return card.categories.toLowerCase().includes(selectTerm);
+  });
+  console.log(filteredProducts);
+  sliceProduct(filteredProducts, 0, 10);
+}
+
+// Company filter
+function companies () {
+  filteredProducts = [];
   let companyTerm = e.target.value.toLowerCase();
   if (companyTerm == "") {
     sliceProduct(cards, 0, 10);
     return;
   }
   filteredProducts = cards.filter(card => {
-    return card.company.toLowerCase().includes(companyTerm)
+    return card.company.toLowerCase().includes(companyTerm);
   });
-  sliceProduct(filteredProducts, 0, 10)
-})
+  sliceProduct(filteredProducts, 0, 10);
+};
 
 
 // Cart number
@@ -382,26 +391,6 @@ let cartNumber = document.querySelector(".zero")
 let cartMobileNumber = document.querySelector(".zero-mobile")
 let toastBox = document.getElementById('toastBox');
 
-const addToCart = (id) => {
-  let selectedItem = cards.find(card => card.id == id);
-  let itemQuantity = parseInt(document.getElementById("amount").value);
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  console.log(itemQuantity);
-
-  const existingItem = cart.find(card => card.id == id);
-  if (existingItem) {
-    existingItem.qty += itemQuantity;
-  } else {
-    cart.push({
-      ...selectedItem,
-      qty: itemQuantity,
-    });
-  }
-  localStorage.setItem('cart', JSON.stringify(cart));
-  showCustomAlert('Item has been added to your cart.');
-  console.log(cart);
-  calculateLength();
-};
 
 const calculateLength = () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -417,40 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
   calculateLength();
 });
 
-
-let searchProductbtn = document.querySelector(".yel-but")
-
-searchProductbtn.addEventListener('submit', () =>{
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// light and dark mode
 const lightDark = document.querySelector(".fa-sun")
 const lightDarkMobile = document.querySelector(".sunma")
 const cartbtn = document.querySelector(".car")
@@ -500,5 +456,30 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add(savedTheme + '-mode');
   } else {
     body.classList.add('dark-mode'); // Default theme
+  }
+});
+
+
+let signlink = document.querySelector(".acc")
+  let guest = document.querySelector(".guest")
+  let create = document.querySelector(".create")
+window.addEventListener("DOMContentLoaded", (event) => {
+  // Check if we need to add new links
+  if (localStorage.getItem("addLinksForProduct") === "true") {
+      // Add new links
+      const navList = document.getElementById("navList");
+      const newLink1 = document.createElement("li");
+      newLink1.innerHTML = '<li class="own"><a href="checkout.html">Checkout</a></li>';
+      navList.appendChild(newLink1);
+
+      const newLink2 = document.createElement("li");
+      newLink2.innerHTML = '<li class="own"><a href="orders.html">Order</a></li>';
+      navList.appendChild(newLink2);
+      // Clear the localStorage item
+
+      localStorage.removeItem("addLinksForProduct");
+     signlink.classList.toggle('acc-inn')
+     guest.innerHTML = '<p class="hello">Hello, demo user</p>'
+     create.innerHTML = '<button class="guest-logout">Log out</button>'
   }
 });

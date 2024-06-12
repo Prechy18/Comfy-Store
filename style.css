@@ -1113,7 +1113,7 @@ body{
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    /* gap: 0px; */
+    width: 65%;
 }
 .shop-cart{
     display: flex;
@@ -1199,6 +1199,12 @@ body{
 }
 .tag{
     display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+.tag-all{
+    width: 30%;
 }
 .price-tag{
     background-color: var(--main-color);
@@ -1206,7 +1212,7 @@ body{
     padding: 20px 25px 0px 25px;
     height: 220px;
     margin-top: 40px;
-    /* width: 30%; */
+    width: 100%;
 }
 .price-hide{
     display: none;
@@ -1234,7 +1240,7 @@ body{
 }
 .price-order{
     display: flex;
-    gap: 200px;
+    justify-content: space-between;
     margin-top: 25px;
 }
 .sub{
@@ -1317,3 +1323,126 @@ body{
 } 
 
 
+
+.acc-inn{
+    display: flex;
+    gap: 25px;
+    justify-content: right;
+    align-items: center;
+    margin-right: 70px;
+}
+.hello{
+    color: var(--white-color);
+}
+.acc-inn button{
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid var(--pink-color);
+    padding: 4px;
+    color: var(--pink-color);
+    cursor: pointer;
+    border-radius: 8px;
+}
+.acc-inn button:hover{
+    background-color: var(--pink2-color);
+    border: 1px solid var(--pink2-color);
+    color: var(--black-color);
+}
+.place{
+    margin: 0 27px 0 27px;
+    padding: 90px 36px 90px 36px;
+}
+.place-div{
+    padding: 7px 0 17px 0;
+    box-shadow: 1px 1px 5px 1px var(--boxshadow-color);
+}
+.place-text{
+    font-size: 33.75px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    color: var(--white3-color);
+    font-family:var(--font-family);
+    margin-left: 10px;
+}
+.Form-fill{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+.shipping{
+    font-family: var(--font-family);
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--white3-color);
+    margin-top: 35px;
+}
+.ship-order{
+    font-family: var(--font-family);
+    font-size: 15px;
+    color: var(--white3-color);
+    margin-bottom: 5px;
+}
+.ship-address{
+    font-family: var(--font-family);
+    font-size: 15px;
+    color: var(--white3-color);
+    margin-bottom: 5px;
+}
+.ship-first{
+    margin-bottom: 20px;
+    padding: 12px 0 12px 0;
+    border: 1px solid var(--outine-color);
+    color: var(--white3-color);
+    background-color: transparent;
+    font-size: 18px;
+    font-family: var(--font-family);
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+}
+.ship-add{
+    margin-bottom: 20px;
+    padding: 12px 0 12px 0;
+    border: 1px solid var(--outine-color);
+    color: var(--white3-color);
+    background-color: transparent;
+    font-size: 18px;
+    font-family: var(--font-family);
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+}
+.order-btn{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--pink-color);
+    color: var(--darkpurle-color);
+    padding: 15px 0 15px 0;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+}
+.order-btn:hover{
+    background-color: var(--pink2-color);
+}
+.price-tags{
+    background-color: var(--main-color);
+    border-radius: 15px;
+    padding: 20px 25px 0px 25px;
+    height: 220px;
+    margin-top: 40px;
+    width: 46%;
+}
+.all-orders{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+}

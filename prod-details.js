@@ -305,8 +305,7 @@ const addToCart = (id) => {
 
 const calculateLength = () => {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let total = cart.reduce((acc , item) => acc
-   + item.qty , 0);
+  let total = cart.reduce((acc , item) => acc + item.qty , 0);
   console.log(total);
   cartNumber.innerHTML = total;
   cartMobileNumber.innerHTML = total;
@@ -388,5 +387,30 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add(savedTheme + '-mode');
   } else {
     body.classList.add('dark-mode'); // Default theme
+  }
+});
+
+
+let signlink = document.querySelector(".acc")
+  let guest = document.querySelector(".guest")
+  let create = document.querySelector(".create")
+window.addEventListener("DOMContentLoaded", (event) => {
+  // Check if we need to add new links
+  if (localStorage.getItem("addLinksForProd-det") === "true") {
+      // Add new links
+      const navList = document.getElementById("navList");
+      const newLink1 = document.createElement("li");
+      newLink1.innerHTML = '<li class="own"><a href="checkout.html">Checkout</a></li>';
+      navList.appendChild(newLink1);
+
+      const newLink2 = document.createElement("li");
+      newLink2.innerHTML = '<li class="own"><a href="orders.html">Order</a></li>';
+      navList.appendChild(newLink2);
+      // Clear the localStorage item
+
+      localStorage.removeItem("addLinksForProd-det");
+     signlink.classList.toggle('acc-inn')
+     guest.innerHTML = '<p class="hello">Hello, demo user</p>'
+     create.innerHTML = '<button class="guest-logout">Log out</button>'
   }
 });

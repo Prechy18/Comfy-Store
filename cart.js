@@ -28,28 +28,6 @@ let cartMobileNumber = document.querySelector(".zero-mobile")
 
 
 let cart = loadCart();// Getting the cart from the localstorage
-// When the add to cart button is clicked it pick out the product id with the value of the amouunt
-// and also call out the cart from the localStorage, if the item already exist in the cart it should add the number of amount picked
-// buh if the item doesn't exist it should add the item to the cart but the cart number wouldn't count or show based on the number of item
-// but based on the number of item quantity 
-const addToCart = (id) => {
-  let selectedItem = cards.find(card => card.id == id);
-  let itemQuantity = parseInt(document.getElementById("amount").value);
-  console.log(itemQuantity);
-
-  const existingItem = cart.find(card => card.id == id);
-  if (existingItem) {
-    existingItem.qty += itemQuantity;
-  } else {
-    cart.push({
-      ...selectedItem,
-      qty: itemQuantity,
-    });
-  }
-  localStorage.setItem('cart', JSON.stringify(cart));
-  console.log(cart);
-  calculateLength();
-};
 
 const calculateLength = () => {
   let total = cart.reduce((acc, item) => acc + item.qty, 0);
@@ -83,7 +61,7 @@ const displayCartItems = () => {
       cartItem.style.marginBottom = "35px"
       cartItem.style.paddingBottom = "25px"
       cartItem.style.borderBottom ="1px solid #000"
-      cartItem.style.width = "95%"
+      cartItem.style.width = "100%"
 
       cartItem.innerHTML = `
         <div class="shop-img">
@@ -111,11 +89,12 @@ const displayCartItems = () => {
 
     // Add event listeners to remove buttons
     const removeButtons = document.querySelectorAll('.shop-remove');
+
     removeButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         const itemId = e.target.getAttribute('data-id');
         removeFromCart(itemId);
-        showCustomAlert('Item has been added to cart.')
+        showCustomAlert('Item removed from the cart.')
       });
     });
   } else {
@@ -186,6 +165,7 @@ if(cart.length === 0){
     return total;
   }).reduce((acc, cur) => acc + cur, 0);
 
+
   subTotalOutput.innerText = `$${totalPrice.toFixed(2)}`;
 
   let shippingCost = 5.00;
@@ -195,7 +175,7 @@ if(cart.length === 0){
    // Calculate the tax, doubling it for each item
    let baseTaxCost = 5.00;
    let taxCost = baseTaxCost * (2, totalItems);
-
+   
   shippingPrice.textContent = `$${shippingCost.toFixed(2)}`;
   taxPrice.textContent = `$${taxCost.toFixed(2)}`;
 
@@ -211,6 +191,8 @@ window.addEventListener('DOMContentLoaded', () => {
   displayCartCount();
   calculateTotalPrice()
 });
+
+
 
 
 const lightDark = document.querySelector(".fa-sun")
@@ -262,5 +244,30 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add(savedTheme + '-mode');
   } else {
     body.classList.add('dark-mode'); // Default theme
+  }
+});
+
+
+let signlink = document.querySelector(".acc")
+  let guest = document.querySelector(".guest")
+  let create = document.querySelector(".create")
+window.addEventListener("DOMContentLoaded", (event) => {
+  // Check if we need to add new links
+  if (localStorage.getItem("addLinksForCart") === "true") {
+      // Add new links
+      const navList = document.getElementById("navList");
+      const newLink1 = document.createElement("li");
+      newLink1.innerHTML = '<li class="own"><a href="checkout.html">Checkout</a></li>';
+      navList.appendChild(newLink1);
+
+      const newLink2 = document.createElement("li");
+      newLink2.innerHTML = '<li class="own"><a href="orders.html">Order</a></li>';
+      navList.appendChild(newLink2);
+      // Clear the localStorage item
+
+      localStorage.removeItem("addLinksForCart");
+     signlink.classList.toggle('acc-inn')
+     guest.innerHTML = '<p class="hello">Hello, demo user</p>'
+     create.innerHTML = '<button class="guest-logout">Log out</button>'
   }
 });
