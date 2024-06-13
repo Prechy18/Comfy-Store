@@ -69,7 +69,7 @@ body{
     --pink2-color: #f94faf;
     --black-color: #000;
     --purple-color: #bf95f9;
-    --yellow-color: #ffb86b;
+    --yellow-color: #ffb86b; 
     --yellow2-color:#f3a34d;
     --page-color:#09090c;
     --purple3-color:#282131;
@@ -85,9 +85,6 @@ body{
     --link-color: white; 
 
 }
-/* body{
-    background-color: var(--body-color);
-} */
 .logolight{
     filter: brightness(0) invert(0);
 }
@@ -574,7 +571,7 @@ input[type="range"]{
     border-radius: 10px;
     outline: none;
     overflow: hidden;
-    background: var(--sign-color);
+    background: var(--body-color);
     
 }
 input[type="range"]::-webkit-slider-thumb{
@@ -1445,4 +1442,80 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 48px;
+}
+.orders{
+    margin: 0 27px 0 27px;
+    padding: 90px 36px 90px 36px;
+}
+.orders-list{
+    padding: 7px 0 17px 0;
+    box-shadow: 1px 1px 5px 1px var(--boxshadow-color);
+}
+.orders-text{
+    font-size: 33.75px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    color: var(--white3-color);
+    font-family:var(--font-family);
+    margin-left: 10px;
+}
+.totalorder{
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: var(--white3-color);
+}
+.total-list{
+    margin-top: 40px;
+}
+.table-name{
+    background-color: transparent;
+    height: 30px;
+    font-size: 14px;
+    color: #9DA5A6;
+    font-family: var(--font-family);
+    font-weight: 700;
+    width: 100%;
+}
+.table-address{
+    background-color: transparent;
+    height: 30px;
+    font-size: 14px;
+    color: #9DA5A6;  
+    font-family: var(--font-family);
+    font-weight: 700;
+    width: 100%;
+}
+.table-product{
+    background-color: transparent;
+    height:30px;
+    font-size: 14px;
+    color: #9DA5A6;
+    font-family: var(--font-family);
+    font-weight: 700;
+    width: 100%;
+}
+.table-cost{
+    background-color: transparent;
+    height: 30px;
+    font-size: 14px;
+    color: #9DA5A6;
+    font-family: var(--font-family);
+    font-weight: 700;
+    width: 100%;
+}
+.table-date{
+    background-color: transparent;
+    height: 30px;
+    font-size: 14px;
+    color: #9DA5A6;
+    font-family: var(--font-family);
+    font-weight: 700;
+    width: 100%;
+}
+.table-list{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    border-bottom: 1px solid #1b1b1b;
+    width: 100%;
 }

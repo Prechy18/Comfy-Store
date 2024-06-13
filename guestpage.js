@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector(".guest-logout").addEventListener("click", function () {
     showCustomAlert("Logout succesful")
      window.location.href = "index.html"
-  })
+  });
 
   // Function to show custom alert
 const showCustomAlert = (message) => {

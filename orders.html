@@ -8,13 +8,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
-    <title>Comfy store | Checkout</title>
+    <title>Comfy store | Orders</title>
 </head>
 <body>
     <div class="sign">
         <div class="acc-inn">
         <p class="hello">Hello, demo user</p>
-        <button>Log out</button>
+        <button class="guest-logout">Log out</button>
         </div>
     </div>
        <!-- header  -->
@@ -56,7 +56,39 @@
           </div>
     </header>
 
+    <div id="custom-alert" class="custom-alert">
+        <i class="fas fa-check-circle icon" style="color: #037803;"></i>
+        <span id="alert-message"></span>
+    </div>
 
+    <section class="orders">
+        <div class=" orders-list">
+            <h2 class="orders-text">Your Orders</h2>
+         </div>
+
+         <div class="total-list">
+            <p class="totalorder">Total Orders : 4939</p>
+
+            <div class="table-list">
+                <div class="table-name">
+                    <p>Name</p>
+                </div>
+                <div class="table-address">
+                    <p>Address</p>
+                </div>
+                <div class="table-product">
+                    <p>Product</p>
+                </div>
+                <div class="table-cost">
+                    <p>Cost</p>
+                </div>
+                <div class="table-date">
+                    <p>Date</p>
+                </div>
+            </div>
+         </div>
+
+    </section>
 <script src="orders.js"></script>
     </body>
     </html>

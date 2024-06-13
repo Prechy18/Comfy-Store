@@ -135,3 +135,25 @@ calculateTotalPrice();
 window.addEventListener('DOMContentLoaded', () => {
   calculateTotalPrice()
 });
+
+
+document.querySelector(".guest-logout").addEventListener("click", function () {
+  showCustomAlert("Logout succesful")
+   window.location.href = "index.html"
+});
+
+  // Function to show custom alert
+  const showCustomAlert = (message) => {
+    const alertBox = document.getElementById('custom-alert');
+    const alertMessage = document.getElementById('alert-message');
+    
+    alertMessage.textContent = message;
+    alertBox.classList.add('show');
+    alertBox.classList.remove('hide');
+    
+    // Hide the alert after 3 seconds
+    setTimeout(() => {
+      alertBox.classList.remove('show');
+      alertBox.classList.add('hide');
+    }, 3000);
+  };

@@ -102,6 +102,30 @@ const displayCartItems = () => {
   }
 }
 
+// // add event listeners to quantity dropdowns
+// const quantitySelectors = document.querySelector('#shop-am')
+// quantitySelectors.forEach(select => {
+//   select.addEventListener('change', (e) => {
+//     const itemId = e.target.getAttribute('data-id')
+//     const newQty = parseInt(e.target.value);
+//     updateCartQuantity(itemId, newQty)
+//   })
+// })
+
+// // Function to update cart quantity
+// const updateCartQuantity = (id, newQty) => {
+//   let cartItems = loadCart();
+//   const itemIndex = cartItems.findIndex(item => item.id === id);
+
+//   if (itemIndex !== -1) {
+//     cartItems[itemIndex].qty = newQty;
+//     saveCart(cartItems);
+//     displayCartItems();
+//     displayCartCount();
+//   }
+// }
+
+
 // Function to remove an item from the cart
 const removeFromCart = (id) => {
   let cartItems = loadCart();

@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // To change the page from light mode to dark mode and vise versa
 const lightDark = document.querySelector(".fa-sun")
 const lightDarkMobile = document.querySelector(".sunma")
-const cartbtn = document.querySelector(".car")
+// const cartbtn = document.querySelector(".car")
 const moon = document.querySelector(".fa-moon")
 const body = document.body;
 lightDark.addEventListener('click', () => {
