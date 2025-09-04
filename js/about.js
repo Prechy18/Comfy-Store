@@ -1,15 +1,13 @@
-let openMenuIcon = document.querySelector(".fa-bars");
-let closeMenuIcon = document.querySelector(".fa-x");
-const mobileNav = document.querySelector(".mobile-nav");
-const header = document.querySelector("header");
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon i'); // target the <i>
+const mobileNav = document.querySelector('.mobile-nav');
 
-// when i click on  the menu icon
-// open the mobile nav
-// change openMenuIcon
+mobileMenuIcon.addEventListener('click', () => {
+  // toggle menu
+  mobileNav.classList.toggle('show');
 
-openMenuIcon.addEventListener("click", () => {
-  mobileNav.classList.toggle("slide");
-  openMenuIcon.classList.toggle("fa-x");
+  // toggle icon between bars and X
+  mobileMenuIcon.classList.toggle('fa-bars');
+  mobileMenuIcon.classList.toggle('fa-x');
 });
 
 
@@ -95,11 +93,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
       // Add new links
       const navList = document.getElementById("navList");
       const newLink1 = document.createElement("li");
-      newLink1.innerHTML = '<li class="own"><a href="checkout.html">Checkout</a></li>';
+      newLink1.innerHTML = '<li class="own"><a href="/pages/checkout.html">Checkout</a></li>';
       navList.appendChild(newLink1);
 
       const newLink2 = document.createElement("li");
-      newLink2.innerHTML = '<li class="own"><a href="orders.html">Order</a></li>';
+      newLink2.innerHTML = '<li class="own"><a href="/pages/orders.html">Order</a></li>';
       navList.appendChild(newLink2);
       // Clear the localStorage item
 

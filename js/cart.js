@@ -1,15 +1,13 @@
-let openMenuIcon = document.querySelector(".fa-bars");
-let closeMenuIcon = document.querySelector(".fa-x");
-const mobileNav = document.querySelector(".mobile-nav");
-const header = document.querySelector("header");
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon i'); // target the <i>
+const mobileNav = document.querySelector('.mobile-nav');
 
-// when i click on  the menu icon
-// open the mobile nav
-// change openMenuIcon
+mobileMenuIcon.addEventListener('click', () => {
+  // toggle menu
+  mobileNav.classList.toggle('show');
 
-openMenuIcon.addEventListener("click", () => {
-  mobileNav.classList.toggle("slide");
-  openMenuIcon.classList.toggle("fa-x");
+  // toggle icon between bars and X
+  mobileMenuIcon.classList.toggle('fa-bars');
+  mobileMenuIcon.classList.toggle('fa-x');
 });
 
 
@@ -23,7 +21,7 @@ const saveCart = (cartItems) => {
   localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
-let cartNumber = document.getElementById("zero");
+let cartNumber = document.querySelector(".zero");
 let cartMobileNumber = document.querySelector(".zero-mobile")
 
 
@@ -81,7 +79,7 @@ const displayCartItems = () => {
           <button class="shop-remove" data-id="${item.id}">Remove</button>
         </div>
         <div class="shop-price">
-          <p>${item.price}</p>
+          <p>$${item.price}</p>
         </div>
       `;
       cartContainer.appendChild(cartItem); // Append each cart item to cartContainer
@@ -102,28 +100,6 @@ const displayCartItems = () => {
   }
 }
 
-// // add event listeners to quantity dropdowns
-// const quantitySelectors = document.querySelector('#shop-am')
-// quantitySelectors.forEach(select => {
-//   select.addEventListener('change', (e) => {
-//     const itemId = e.target.getAttribute('data-id')
-//     const newQty = parseInt(e.target.value);
-//     updateCartQuantity(itemId, newQty)
-//   })
-// })
-
-// // Function to update cart quantity
-// const updateCartQuantity = (id, newQty) => {
-//   let cartItems = loadCart();
-//   const itemIndex = cartItems.findIndex(item => item.id === id);
-
-//   if (itemIndex !== -1) {
-//     cartItems[itemIndex].qty = newQty;
-//     saveCart(cartItems);
-//     displayCartItems();
-//     displayCartCount();
-//   }
-// }
 
 
 // Function to remove an item from the cart
@@ -281,11 +257,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
       // Add new links
       const navList = document.getElementById("navList");
       const newLink1 = document.createElement("li");
-      newLink1.innerHTML = '<li class="own"><a href="checkout.html">Checkout</a></li>';
+      newLink1.innerHTML = '<li class="own"><a href="/checkout.html">Checkout</a></li>';
       navList.appendChild(newLink1);
 
       const newLink2 = document.createElement("li");
-      newLink2.innerHTML = '<li class="own"><a href="orders.html">Order</a></li>';
+      newLink2.innerHTML = '<li class="own"><a href="/orders.html">Order</a></li>';
       navList.appendChild(newLink2);
       // Clear the localStorage item
 

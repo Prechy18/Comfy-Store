@@ -16,266 +16,300 @@ openMenuIcon.addEventListener("click", () => {
 });
 
 
-let searchParams = new URLSearchParams(window.location.search)
-const productId = searchParams.get("id");
 const cards = [
   {
     id:"prod-1",
-    img: "images/light.jpeg",
+    img: "/images/light.jpeg" ,
     label: "Avant-Garde Lamp",
-    price: 179.99,
+    price: 139.99,
     link: "prod-details.html",
     company: "Modenza",
     categories: "Table , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-2",
-    img: "images/chair.jpeg",
+    img: "/images/chair.jpeg",
     label: "Chic Chair",
-    price: 333.9,
+    price: 329.9,
     link: "prod-details.html",
     company: "Luxora",
     categories: "Kids , Chair , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-3",
-    img: "images/coffee.jpeg",
+    img: "/images/coffee.jpeg",
     label: "Coffee Table",
-    price: 179.99,
+    price: 159.99,
     link: "prod-details.html",
     company: "Modenza",
     categories: "Table , all",
+    freeShipping: false,
   },
 
   {
     id:"prod-4",
-    img: "images/bed.jpeg",
+    img: "/images/bed.jpeg",
     label: "Comfy Bed",
-    price: 129.99,
+    price: 729.99,
     link: "prod-details.html",
     company: "Homestead",
     categories: "Beds , all",
+    freeShipping: false,
   },
 
   {
     id:"prod-5",
-    img: "images/sofa.jpeg",
+    img: "/images/sofa.jpeg",
     label: "Contemporary Sofa",
-    price: 159.99,
+    price: 559.99,
     link: "prod-details.html",
     company: "Comfora",
     categories: "Sofas , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-6",
-    img: "images/bed2.jpeg",
+    img: "/images/bed2.jpeg",
     label: "Cutting-Edge Bed",
-    price: 84.99,
+    price: 679.99,
     link: "prod-details.html",
     company: "Homestead",
     categories: "Beds , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-7",
-    img: "images/book.jpeg",
+    img: "/images/book.jpeg",
     label: "Futuristic Shelves",
-    price: 94.99,
+    price: 339.99,
     link: "prod-details.html",
     company: "Luxora",
     categories: "Kids , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-8",
-    img: "images/glass.jpeg",
+    img: "/images/glass.jpeg",
     label: "Glass Table",
     price: 159.99,
     link: "prod-details.html",
     company: "Modenza",
     categories: "Table , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-9",
-    img: "images/king.webp",
+    img: "/images/king.webp",
     label: "King Bed",
     price: 189.99,
     link: "prod-details.html",
     company: "Homestead",
     categories: "Beds , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-10",
-    img: "images/lounge.webp",
+    img: "/images/lounge.webp",
     label: "Lounge Chair",
     price: 259.99,
     link: "prod-details.html",
     company: "Luxora",
     categories: "Chair , all",
+    freeShipping: false,
   },
 
   {
     id:"prod-11",
-    img: "images/mini.jpeg",
+    img: "/images/mini.jpeg",
     label: "Minimalist Shelves",
     price: 439.99,
     link: "prod-details.html",
     company: "Artifex",
     categories: "Beds , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-12",
-    img: "images/morden.jpeg",
+    img: "/images/morden.jpeg",
     label: "Morden Sofa",
     price: 299.99,
     link: "prod-details.html",
     company: "Comfora",
     categories: "Sofas , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-13",
-    img: "images/morden2.webp",
+    img: "/images/morden2.webp",
     label: "Modern Table",
     price: 389.99,
     link: "prod-details.html",
     company: "Modenza",
     categories: "Table , all",
+    freeShipping: false,
   },
 
   {
     id:"prod-14",
-    img: "images/recli.jpeg",
+    img: "//images/recli.jpeg",
     label: "Reclining Sofa",
     price: 329.99,
     link: "prod-details.html",
     company: "Comfora",
     categories: "Sofas , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-15",
-    img: "images/sect.jpeg",
+    img: "/images/sect.jpeg",
     label: "Sectional Sofa",
     price:359.99,
     link: "prod-details.html",
     company: "Comfora",
     categories: "Sofas , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-16",
-    img: "images/sleek.jpeg",
+    img: "/images/sleek.jpeg",
     label: "Sleek Bed",
     price: 539.99,
     link: "prod-details.html",
     company: "Homestead",
     categories: "Beds , all",
+    freeShipping: false,
   },
 
   {
     id:"prod-17",
-    img: "images/sleek2.jpeg",
+    img: "/images/sleek2.jpeg",
     label: "Sleek Chair",
     price: 199.99,
     link: "prod-details.html",
     company: "Luxora",
     categories: "Chair , all",
+    freeShipping: false,
   },
 
   {
     id:"prod-18",
-    img: "images/stream.webp",
+    img: "/images/stream.webp",
     label: "Streamlined Table",
-    price: 209.99,
+    price: 409.99,
     link: "prod-details.html",
     company: "Modenza",
     categories: "Table , all",
+    freeShipping: false,
   },
 
   {
     id:"prod-19",
-    img: "images/stylish.jpeg",
+    img: "/images/stylish.jpeg",
     label: "Stylish Bed",
-    price: 169.99,
+    price: 599.99,
     link: "prod-details.html",
     company: "Homestead",
     categories: "Beds, all",
+    freeShipping: true,
   },
 
   {
     id:"prod-20",
-    img: "images/toy.webp",
+    img: "/images/toy.webp",
     label: "Toy shelf",
-    price: 79.99,
+    price: 149.99,
     link: "prod-details.html",
     company: "Luxora",
     categories: "Kids , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-21",
-    img: "images/velvet.jpeg",
+    img: "/images/velvet.jpeg",
     label: "Velvet Sofa",
-    price: 289.99,
+    price: 499.99,
     link: "prod-details.html",
     company: "Luxora",
     categories: "Sofas , all",
+    freeShipping: true,
   },
 
   {
     id:"prod-22",
-    img: "images/wooden.webp",
+    img: "/images/wooden.webp",
     label: "Wooden Shelves",
-    price: 119.99,
+    price: 299.99,
     link: "prod-details.html",
     company: "Artifex",
     categories: "Kids , all",
+    freeShipping: true,
   },
 ];
+// Get ?id=... from the URL
+let params = new URLSearchParams(window.location.search);
+let productId = params.get("id"); // example: "prod-1"
+console.log("Product ID from URL:", productId);
+
 
 let ShoppingCart = document.querySelector(".pro-cart")
+
 const displaySingleProduct = () => {
   let singleProduct = cards.find(card => card.id === productId);
-  let { img, label, company, price, id } = singleProduct
-  console.log(singleProduct);
 
-    ShoppingCart.innerHTML += `
-    <div class="whole-pro containers">
-  <div class="cart-img">
-      <a href="index.html">Home</a> <i class="fa-solid fa-arrow-right"></i> <a href="product.html">Products</a>
-      <br>
-      <img class="cart-pro" src="${img}" alt="">
-  </div>
+  if (!singleProduct) {
+    console.error("No product found with id:", productId);
+    return;
+  }
 
-  <div class="cart-info">
-      <p class="cart-name">${label}</p>
-      <p class="cart-company">${company}</p>
-      <p class="cart-price">${price}</p>
-      <p class="cart-dec">Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge</p>
-      <div class="colors">
-          <p class="colo">Colors</p>
-          <button class="green"></button>
-          <button class="blue"></button>
+  let { img, label, company, price, id } = singleProduct;
+
+  ShoppingCart.innerHTML += `
+    <div class="whole-pro container">
+      <div class="cart-img">
+          <a href="/pages/index.html">Home</a> 
+          <i class="fa-solid fa-arrow-right"></i> 
+          <a href="/pages/product.html">Products</a>
+          <br>
+          <img class="cart-pro" src="${img}" alt="">
       </div>
+
+      <div class="cart-info">
+          <p class="cart-name">${label}</p>
+          <p class="cart-company">${company}</p>
+          <p class="cart-price">$${price}</p>
+          <p class="cart-dec">Some product description...</p>
+          <div class="colors">
+              <p class="colo">Colors</p>
+              <button class="green"></button>
+              <button class="blue"></button>
+          </div>
           <p class="amount">Amount</p>
-          <select  name="Amount" id="amount">
-             ${Array.from({length: 15}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
+          <select name="Amount" id="amount">
+            ${Array.from({length: 15}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
           </select>
           <br>
           <button onclick="addToCart('${id}')" class="cart-btn">ADD TO CART</button>
-  </div>
-  </div> 
-  `
-
+      </div>
+    </div> 
+  `;
 }
+
 displaySingleProduct();
+
 
 let cartNumber = document.querySelector(".zero")
 let cartMobileNumber = document.querySelector(".zero-mobile")
@@ -400,11 +434,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
       // Add new links
       const navList = document.getElementById("navList");
       const newLink1 = document.createElement("li");
-      newLink1.innerHTML = '<li class="own"><a href="checkout.html">Checkout</a></li>';
+      newLink1.innerHTML = '<li class="own"><a href="/pages/checkout.html">Checkout</a></li>';
       navList.appendChild(newLink1);
 
       const newLink2 = document.createElement("li");
-      newLink2.innerHTML = '<li class="own"><a href="orders.html">Order</a></li>';
+      newLink2.innerHTML = '<li class="own"><a href="/pages/orders.html">Order</a></li>';
       navList.appendChild(newLink2);
       // Clear the localStorage item
 
