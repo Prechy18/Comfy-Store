@@ -14,7 +14,7 @@ mobileMenuIcon.addEventListener('click', () => {
   const cards = [
     {
       id:"prod-1",
-      img: "./images/light.jpeg" ,
+      img: "../images/light.jpeg" ,
       label: "Avant-Garde Lamp",
       price: 139.99,
       link: "prod-details.html",
@@ -25,7 +25,7 @@ mobileMenuIcon.addEventListener('click', () => {
   
     {
       id:"prod-2",
-      img: "./images/chair.jpeg",
+      img: "../images/chair.jpeg",
       label: "Chic Chair",
       price: 329.9,
       link: "prod-details.html",
@@ -58,7 +58,7 @@ mobileMenuIcon.addEventListener('click', () => {
   
     {
       id:"prod-5",
-      img: "/..images/sofa.jpeg",
+      img: "../images/sofa.jpeg",
       label: "Contemporary Sofa",
       price: 559.99,
       link: "prod-details.html",
@@ -69,7 +69,7 @@ mobileMenuIcon.addEventListener('click', () => {
   
     {
       id:"prod-6",
-      img: "/..images/bed2.jpeg",
+      img: "../images/bed2.jpeg",
       label: "Cutting-Edge Bed",
       price: 679.99,
       link: "prod-details.html",
@@ -80,7 +80,7 @@ mobileMenuIcon.addEventListener('click', () => {
   
     {
       id:"prod-7",
-      img: "/..images/book.jpeg",
+      img: "../images/book.jpeg",
       label: "Futuristic Shelves",
       price: 339.99,
       link: "prod-details.html",
