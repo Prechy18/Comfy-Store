@@ -1,20 +1,19 @@
-let openMenuIcon = document.querySelector(".fa-bars");
-let closeMenuIcon = document.querySelector(".fa-x");
-const mobileNav = document.querySelector(".mobile-nav");
-const header = document.querySelector("header");
-let searchProductInput = document.querySelector(".search-product");
-let category = document.querySelector(".Category")
-let company = document.querySelector(".company")
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon i'); // target the <i>
+const mobileNav = document.querySelector('.mobile-nav');
 
-// when i click on  the menu icon
-// open the mobile nav
-// change openMenuIcon
+mobileMenuIcon.addEventListener('click', () => {
+  // toggle menu
+  mobileNav.classList.toggle('show');
 
-openMenuIcon.addEventListener("click", () => {
-  mobileNav.classList.toggle("slide");
-  openMenuIcon.classList.toggle("fa-x");
+  // toggle icon between bars and X
+  mobileMenuIcon.classList.toggle('fa-bars');
+  mobileMenuIcon.classList.toggle('fa-x');
 });
 
+  
+  let searchProductInput = document.querySelector(".search-product");
+  let category = document.querySelector(".Category")
+  let company = document.querySelector(".company")
 
 const cards = [
   {

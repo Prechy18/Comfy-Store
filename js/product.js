@@ -527,27 +527,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-let signlink = document.querySelector(".acc")
-  let guest = document.querySelector(".guest")
-  let create = document.querySelector(".create")
-window.addEventListener("DOMContentLoaded", (event) => {
-  // Check if we need to add new links
-  if (localStorage.getItem("addLinksForProduct") === "true") {
-      // Add new links
-      const navList = document.getElementById("navList");
-      const newLink1 = document.createElement("li");
-      newLink1.innerHTML = '<li class="own"><a href=/pages/checkout.html">Checkout</a></li>';
-      navList.appendChild(newLink1);
-
-      const newLink2 = document.createElement("li");
-      newLink2.innerHTML = '<li class="own"><a href="/pages/orders.html">Order</a></li>';
-      navList.appendChild(newLink2);
-      // Clear the localStorage item
-
-      localStorage.removeItem("addLinksForProduct");
-     signlink.classList.toggle('acc-inn')
-     guest.innerHTML = '<p class="hello">Hello, demo user</p>'
-     create.innerHTML = '<button class="guest-logout">Log out</button>'
-  }
-});

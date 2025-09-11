@@ -1,16 +1,15 @@
-let openMenuIcon = document.querySelector(".fa-bars");
-let closeMenuIcon = document.querySelector(".fa-x");
-const mobileNav = document.querySelector(".mobile-nav");
-const header = document.querySelector("header");
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon i'); // target the <i>
+const mobileNav = document.querySelector('.mobile-nav');
 
-// when i click on  the menu icon
-// open the mobile nav
-// change openMenuIcon
-// Mobile link on the Nav-bar
-openMenuIcon.addEventListener("click", () => {
-  mobileNav.classList.toggle("slide");
-  openMenuIcon.classList.toggle("fa-x");
+mobileMenuIcon.addEventListener('click', () => {
+  // toggle menu
+  mobileNav.classList.toggle('show');
+
+  // toggle icon between bars and X
+  mobileMenuIcon.classList.toggle('fa-bars');
+  mobileMenuIcon.classList.toggle('fa-x');
 });
+
 
 
 let cartNumber = document.querySelector(".zero") // Cart Number
@@ -139,7 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 document.querySelector(".guest-logout").addEventListener("click", function () {
   showCustomAlert("Logout succesful")
-   window.location.href = "/pages/index.html"
+   window.location.href = "../pages/index.html"
 });
 
   // Function to show custom alert

@@ -2,7 +2,7 @@
 
 document.querySelector(".user").addEventListener("click", function () {
   showCustomAlert("Welcome guest user")
-   window.location.href = "index.html"
+   window.location.href = "..index.html"
    // Save information to localStorage
    localStorage.setItem("addLinks", "true");
    localStorage.setItem("addLinksForHome", "true")
