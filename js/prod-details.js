@@ -18,7 +18,7 @@ mobileMenuIcon.addEventListener('click', () => {
 const cards = [
   {
     id:"prod-1",
-    img: "../images/light.jpeg" ,
+    img: "./images/light.jpeg" ,
     label: "Avant-Garde Lamp",
     price: 139.99,
     link: "prod-details.html",
@@ -29,7 +29,7 @@ const cards = [
 
   {
     id:"prod-2",
-    img: "../images/chair.jpeg",
+    img: "./images/chair.jpeg",
     label: "Chic Chair",
     price: 329.9,
     link: "prod-details.html",
