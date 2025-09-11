@@ -18,7 +18,7 @@ mobileMenuIcon.addEventListener('click', () => {
 const cards = [
   {
     id:"prod-1",
-    img: "/images/light.jpeg" ,
+    img: "../images/light.jpeg" ,
     label: "Avant-Garde Lamp",
     price: 139.99,
     link: "prod-details.html",
@@ -29,7 +29,7 @@ const cards = [
 
   {
     id:"prod-2",
-    img: "/images/chair.jpeg",
+    img: "../images/chair.jpeg",
     label: "Chic Chair",
     price: 329.9,
     link: "prod-details.html",
@@ -40,7 +40,7 @@ const cards = [
 
   {
     id:"prod-3",
-    img: "/images/coffee.jpeg",
+    img: "../images/coffee.jpeg",
     label: "Coffee Table",
     price: 159.99,
     link: "prod-details.html",
@@ -51,7 +51,7 @@ const cards = [
 
   {
     id:"prod-4",
-    img: "/images/bed.jpeg",
+    img: "../images/bed.jpeg",
     label: "Comfy Bed",
     price: 729.99,
     link: "prod-details.html",
@@ -62,7 +62,7 @@ const cards = [
 
   {
     id:"prod-5",
-    img: "/images/sofa.jpeg",
+    img: "/..images/sofa.jpeg",
     label: "Contemporary Sofa",
     price: 559.99,
     link: "prod-details.html",
@@ -73,7 +73,7 @@ const cards = [
 
   {
     id:"prod-6",
-    img: "/images/bed2.jpeg",
+    img: "/..images/bed2.jpeg",
     label: "Cutting-Edge Bed",
     price: 679.99,
     link: "prod-details.html",
@@ -84,7 +84,7 @@ const cards = [
 
   {
     id:"prod-7",
-    img: "/images/book.jpeg",
+    img: "/..images/book.jpeg",
     label: "Futuristic Shelves",
     price: 339.99,
     link: "prod-details.html",
@@ -95,7 +95,7 @@ const cards = [
 
   {
     id:"prod-8",
-    img: "/images/glass.jpeg",
+    img: "../images/glass.jpeg",
     label: "Glass Table",
     price: 159.99,
     link: "prod-details.html",
@@ -106,7 +106,7 @@ const cards = [
 
   {
     id:"prod-9",
-    img: "/images/king.webp",
+    img: "../images/king.webp",
     label: "King Bed",
     price: 189.99,
     link: "prod-details.html",
@@ -117,7 +117,7 @@ const cards = [
 
   {
     id:"prod-10",
-    img: "/images/lounge.webp",
+    img: "../images/lounge.webp",
     label: "Lounge Chair",
     price: 259.99,
     link: "prod-details.html",
@@ -128,7 +128,7 @@ const cards = [
 
   {
     id:"prod-11",
-    img: "/images/mini.jpeg",
+    img: "../images/mini.jpeg",
     label: "Minimalist Shelves",
     price: 439.99,
     link: "prod-details.html",
@@ -139,7 +139,7 @@ const cards = [
 
   {
     id:"prod-12",
-    img: "/images/morden.jpeg",
+    img: "../images/morden.jpeg",
     label: "Morden Sofa",
     price: 299.99,
     link: "prod-details.html",
@@ -150,7 +150,7 @@ const cards = [
 
   {
     id:"prod-13",
-    img: "/images/morden2.webp",
+    img: "../images/morden2.webp",
     label: "Modern Table",
     price: 389.99,
     link: "prod-details.html",
@@ -161,7 +161,7 @@ const cards = [
 
   {
     id:"prod-14",
-    img: "//images/recli.jpeg",
+    img: "../images/recli.jpeg",
     label: "Reclining Sofa",
     price: 329.99,
     link: "prod-details.html",
@@ -172,7 +172,7 @@ const cards = [
 
   {
     id:"prod-15",
-    img: "/images/sect.jpeg",
+    img: "../images/sect.jpeg",
     label: "Sectional Sofa",
     price:359.99,
     link: "prod-details.html",
@@ -183,7 +183,7 @@ const cards = [
 
   {
     id:"prod-16",
-    img: "/images/sleek.jpeg",
+    img: "../images/sleek.jpeg",
     label: "Sleek Bed",
     price: 539.99,
     link: "prod-details.html",
@@ -194,7 +194,7 @@ const cards = [
 
   {
     id:"prod-17",
-    img: "/images/sleek2.jpeg",
+    img: "../images/sleek2.jpeg",
     label: "Sleek Chair",
     price: 199.99,
     link: "prod-details.html",
@@ -205,7 +205,7 @@ const cards = [
 
   {
     id:"prod-18",
-    img: "/images/stream.webp",
+    img: "../images/stream.webp",
     label: "Streamlined Table",
     price: 409.99,
     link: "prod-details.html",
@@ -216,7 +216,7 @@ const cards = [
 
   {
     id:"prod-19",
-    img: "/images/stylish.jpeg",
+    img: "../images/stylish.jpeg",
     label: "Stylish Bed",
     price: 599.99,
     link: "prod-details.html",
@@ -227,7 +227,7 @@ const cards = [
 
   {
     id:"prod-20",
-    img: "/images/toy.webp",
+    img: "../images/toy.webp",
     label: "Toy shelf",
     price: 149.99,
     link: "prod-details.html",
@@ -238,7 +238,7 @@ const cards = [
 
   {
     id:"prod-21",
-    img: "/images/velvet.jpeg",
+    img: "../images/velvet.jpeg",
     label: "Velvet Sofa",
     price: 499.99,
     link: "prod-details.html",
@@ -249,7 +249,7 @@ const cards = [
 
   {
     id:"prod-22",
-    img: "/images/wooden.webp",
+    img: "../images/wooden.webp",
     label: "Wooden Shelves",
     price: 299.99,
     link: "prod-details.html",
