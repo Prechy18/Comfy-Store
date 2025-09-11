@@ -101,6 +101,9 @@ body{
     display: flex;
     gap: 25px;
     }
+    .firimg{
+      display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -109,6 +112,9 @@ body{
     }
     .mobile-whole {
       display: flex;
+    }
+    .firimg{
+      display: none;
     }
   }
 
@@ -127,6 +133,9 @@ body{
         display: flex;
         gap: 25px;
         margin-left: 0px;
+    }
+    .firimg{
+      display: none;
     }
 }
 
